@@ -1,14 +1,16 @@
-@import "tailwindcss";
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap');
+@import "tailwindcss";
 
 @theme {
   --font-display: "Cormorant Garamond", serif;
   --font-body: "Jost", sans-serif;
   
   --color-navy-dark: #0B1C3A;
+  --color-navy-mid: #1A3668;
   --color-navy: #102347;
   --color-gold: #C9A84C;
   --color-gold-light: #E2C47A;
+  --color-gold-pale: #EFE4C8;
   --color-cream: #FAF6EE;
   --color-border: rgba(201, 168, 76, 0.25);
 }

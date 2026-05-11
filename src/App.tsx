@@ -343,34 +343,38 @@ export default function App() {
         {/* --- PROJECTS --- */}
         <Section id="projects" title="Projects" label="Portfolio">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Project 01 */}
-            <ProjectCard 
-              id="01" 
-              name="College FAQ ChatBot" 
-              tech={["HTML", "CSS", "JavaScript", "NLP"]}
-              description="An Innovation and Design Thinking Laboratory project at Siddaganga Institute of Technology (SIT). Developed a web-based interactive chatbot providing instant, accurate, and user-friendly access to institutional information about admissions, courses, and campus life using keyword-based matching and dynamic responses. Features an integrated feedback system and admin panel."
-            />
-            {/* Project 02 */}
-            <ProjectCard 
-              id="02" 
-              name="Money Manager Pro" 
-              tech={["HTML", "CSS", "JavaScript", "Google Sheets API"]}
-              description="Built a real-time expense and income tracker with live Google Sheets synchronization. Features include categorical budgeting and financial visualization for seamless money management."
-            />
-            {/* Project 03 */}
-            <ProjectCard 
-              id="03" 
-              name="Nanocomposite Green Synthesis" 
-              tech={["Nanotechnology", "Materials Science", "XRD Analysis", "PLA"]}
-              description="An interdisciplinary research project at Siddaganga Institute of Technology (SIT) focused on the green synthesis of TiO2 nanoparticles and the development of sustainable PLA-TiO2 nanocomposites for electrical insulator applications. Conducted under the guidance of Dr. Rashmi, Head of Department, Electronics and Electrical Engineering."
-            />
-            {/* Project 04 */}
-            <ProjectCard 
-              id="04" 
-              name="Personal Portfolio Website" 
-              tech={["React", "Vite", "Tailwind CSS", "Vibe Coding"]}
-              description="Created a personal portfolio website using 'Vibe Coding' to showcase my academic journey and technical skills. The site features interactive components, responsive design, and smooth animations using modern web technologies."
-            />
+            {CV_DATA.projects.map((proj, i) => (
+              <motion.div
+                key={proj.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="bg-white group overflow-hidden border border-gold/20 relative shadow-sm hover:shadow-xl transition-all"
+              >
+                <div className="absolute top-0 left-0 w-1.5 h-full bg-gold transform origin-bottom scale-y-0 group-hover:scale-y-100 transition-transform duration-500" />
+                <div className="p-8">
+                  <div className="flex justify-between items-start mb-6">
+                    <span className="font-display text-4xl font-black text-gold/70">{proj.id}</span>
+                    <ArrowUpRight className="text-gold opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                  <h3 className="font-display text-2xl font-bold text-navy mb-2 leading-tight">{proj.name}</h3>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {proj.tech.map(t => (
+                      <span key={t} className="text-[9px] font-black tracking-widest uppercase py-1 px-2 border border-gold/30 rounded text-gold bg-gold/5">
+                        {t}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="text-navy/70 text-sm leading-relaxed mb-6">
+                    {proj.description}
+                  </p>
+                  <button className="flex items-center gap-2 text-[11px] font-bold tracking-widest uppercase text-navy border-b-2 border-gold pb-1 hover:text-gold transition-colors">
+                    View Project <ChevronRight size={14} />
+                  </button>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </Section>
 
