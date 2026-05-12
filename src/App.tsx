@@ -10,6 +10,8 @@ import {
 } from 'lucide-react';
 import profilePic from './profile.jpg';
 import { AIChat } from './components/AIChat';
+import { CV_DATA } from './constants';
+
 
 export default function App() {
   const [activeTab, setActiveTab] = useState('about');
