@@ -6,7 +6,7 @@ import {
   Briefcase, Cpu, Award, Heart, MessageSquare,
   Menu, X, ExternalLink, ArrowUpRight,
   Code, Brain, Terminal, Layers, Sparkles, GitBranch, Puzzle,
-  Palette, Video
+  Palette, Video, FileText, Download
 } from 'lucide-react';
 import profilePic from './profile.jpg';
 import { AIChat } from './components/AIChat';
@@ -22,7 +22,7 @@ export default function App() {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
       
-      const sections = ['about', 'personal', 'education', 'skills', 'interests', 'projects'];
+      const sections = ['about', 'personal', 'education', 'skills', 'interests', 'resume', 'projects'];
       for (const section of sections) {
         const element = document.getElementById(section);
         if (element) {
@@ -60,6 +60,7 @@ export default function App() {
     { id: 'education', label: 'Education' },
     { id: 'skills', label: 'Skills' },
     { id: 'interests', label: 'Interests' },
+    { id: 'resume', label: 'Resume' },
     { id: 'projects', label: 'Projects' },
   ];
 
@@ -177,6 +178,9 @@ export default function App() {
               <button onClick={() => scrollTo('interests')} className={`px-4 py-2 text-[11px] font-semibold tracking-[0.14em] uppercase transition-all relative ${activeTab === 'interests' ? 'text-gold' : 'text-white/50 hover:text-gold-light'}`}>
                 Interests {activeTab === 'interests' && <motion.div layoutId="nav-pill" className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />}
               </button>
+              <button onClick={() => scrollTo('resume')} className={`px-4 py-2 text-[11px] font-semibold tracking-[0.14em] uppercase transition-all relative ${activeTab === 'resume' ? 'text-gold' : 'text-white/50 hover:text-gold-light'}`}>
+                Resume {activeTab === 'resume' && <motion.div layoutId="nav-pill" className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />}
+              </button>
               <button onClick={() => scrollTo('projects')} className={`px-4 py-2 text-[11px] font-semibold tracking-[0.14em] uppercase transition-all relative ${activeTab === 'projects' ? 'text-gold' : 'text-white/50 hover:text-gold-light'}`}>
                 Projects {activeTab === 'projects' && <motion.div layoutId="nav-pill" className="absolute bottom-0 left-4 right-4 h-0.5 bg-gold" />}
               </button>
@@ -214,6 +218,7 @@ export default function App() {
               <button onClick={() => scrollTo('education')} className="w-full text-left px-8 py-4 text-sm font-semibold tracking-widest uppercase text-white/70 border-b border-white/5 hover:bg-gold/10">Education</button>
               <button onClick={() => scrollTo('skills')} className="w-full text-left px-8 py-4 text-sm font-semibold tracking-widest uppercase text-white/70 border-b border-white/5 hover:bg-gold/10">Skills</button>
               <button onClick={() => scrollTo('interests')} className="w-full text-left px-8 py-4 text-sm font-semibold tracking-widest uppercase text-white/70 border-b border-white/5 hover:bg-gold/10">Interests</button>
+              <button onClick={() => scrollTo('resume')} className="w-full text-left px-8 py-4 text-sm font-semibold tracking-widest uppercase text-white/70 border-b border-white/5 hover:bg-gold/10">Resume</button>
               <button onClick={() => scrollTo('projects')} className="w-full text-left px-8 py-4 text-sm font-semibold tracking-widest uppercase text-white/70 border-b border-white/5 hover:bg-gold/10">Projects</button>
             </motion.div>
           )}
@@ -340,6 +345,37 @@ export default function App() {
             <span className="px-6 py-3 bg-white border border-gold/20 text-navy-dark text-sm font-medium hover:bg-navy hover:text-gold transition-all cursor-default shadow-sm">Tech Innovation</span>
             <span className="px-6 py-3 bg-white border border-gold/20 text-navy-dark text-sm font-medium hover:bg-navy hover:text-gold transition-all cursor-default shadow-sm">Hackathons</span>
           </div>
+        </Section>
+
+        {/* --- RESUME --- */}
+        <Section id="resume" title="Resume" label="Document">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-white p-8 md:p-12 border border-gold/20 shadow-sm flex flex-col md:flex-row items-center justify-between gap-8"
+          >
+            <div className="flex items-center gap-6">
+              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center text-gold shrink-0">
+                <FileText size={32} />
+              </div>
+              <div>
+                <h3 className="font-display text-2xl font-bold text-navy-dark mb-2">Satya Prakash's Resume</h3>
+                <p className="text-navy/70 text-sm">Download my latest resume to see my qualifications, experience, and skills in detail.</p>
+              </div>
+            </div>
+            
+            <a 
+              href="/resume.pdf" 
+              download="Satya_Prakash_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 px-8 py-4 bg-navy text-gold font-bold tracking-widest uppercase text-sm border border-navy hover:bg-transparent hover:text-navy transition-all shrink-0"
+            >
+              <Download size={18} />
+              Download PDF
+            </a>
+          </motion.div>
         </Section>
 
         {/* --- PROJECTS --- */}
