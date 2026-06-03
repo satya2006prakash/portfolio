@@ -366,7 +366,7 @@ export default function App() {
             </div>
             
             <a 
-              href="/resume.pdf" 
+              href="/Satya_Prakash_Resume.pdf" 
               download="Satya_Prakash_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
