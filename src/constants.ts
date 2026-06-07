@@ -72,27 +72,77 @@ export const CV_DATA = {
   projects: [
     {
       id: "01",
-      name: "College FAQ ChatBot",
-      tech: ["HTML", "CSS", "JavaScript", "NLP"],
-      description: "An Innovation and Design Thinking Laboratory project at Siddaganga Institute of Technology (SIT). Developed a web-based interactive chatbot providing instant, accurate, and user-friendly access to institutional information about admissions, courses, and campus life using keyword-based matching and dynamic responses. Features an integrated feedback system and admin panel."
+      name: "EduTrack SIT",
+      tech: ["HTML", "CSS", "JavaScript", "Supabase", "Vercel", "GitHub"],
+      description: "A smart academic tracking platform designed specifically for SIT Tumkur students to calculate attendance, monitor CIE marks, predict SEE targets, and estimate SGPA. Connected to a live Supabase database with authentication, serving 1300+ backend requests within 6 hours of launch.",
+      link: "https://edu-track-sit.vercel.app/"
     },
     {
       id: "02",
+      name: "College FAQ ChatBot",
+      tech: ["HTML", "CSS", "JavaScript", "NLP"],
+      description: "An Innovation and Design Thinking Laboratory project at Siddaganga Institute of Technology (SIT). Developed a web-based interactive chatbot providing instant, accurate, and user-friendly access to institutional information about admissions, courses, and campus life using keyword-based matching and dynamic responses. Features an integrated feedback system and admin panel.",
+      links: [
+        { label: "View Report", url: "/College_FAQ_Chatbot_Report.pdf" },
+        { label: "View PPT", url: "/College_FAQ_Chatbot_PPT.pdf" }
+      ]
+    },
+    {
+      id: "03",
       name: "Money Manager Pro",
       tech: ["HTML", "CSS", "JavaScript", "Google Sheets API"],
       description: "Built a real-time expense and income tracker with live Google Sheets synchronization. Features include categorical budgeting and financial visualization for seamless money management."
     },
     {
-      id: "03",
+      id: "04",
       name: "Nanocomposite Green Synthesis",
       tech: ["Nanotechnology", "Materials Science", "XRD Analysis", "PLA"],
       description: "An interdisciplinary research project at Siddaganga Institute of Technology (SIT) focused on the green synthesis of TiO2 nanoparticles and the development of sustainable PLA-TiO2 nanocomposites for electrical insulator applications. Conducted under the guidance of Dr. Rashmi, Head of Department, Electronics and Electrical Engineering."
     },
     {
-      id: "04",
+      id: "05",
       name: "Personal Portfolio Website",
       tech: ["React", "Vite", "Tailwind CSS", "Vibe Coding"],
-      description: "Created a personal portfolio website using 'Vibe Coding' to showcase my academic journey and technical skills. The site features interactive components, responsive design, and smooth animations using modern web technologies."
+      description: "Created a personal portfolio website using 'Vibe Coding' to showcase my academic journey and technical skills. The site features interactive components, responsive design, and smooth animations using modern web technologies.",
+      link: "https://sp-tech-hub.vercel.app/"
+    }
+  ],
+  clubs: [
+    {
+      name: "Aurora",
+      type: "The Theatrical Club",
+      role: "Editor & Poster Designer",
+      description: "Designing promotional posters and editing publications for the college's drama and theatrical club, promoting theatrical plays, cultural events, and stage productions.",
+      icon: "book",
+      instagram: "https://www.instagram.com/aurora_thetheatricalgroup?igsh=dmRoNnloZWxpbXFl",
+      logo: "/aurora_logo.jpg"
+    },
+    {
+      name: "Adlib",
+      type: "Photography Club",
+      role: "Photographer & Videographer",
+      description: "Capturing institutional events, producing creative video content, and managing media production for the campus photography club.",
+      icon: "camera",
+      instagram: "https://www.instagram.com/sit_adlib?igsh=MWRpb3Nva2hxY3Q1NQ==",
+      logo: "/adlib_logo.jpg"
+    },
+    {
+      name: "IEEE SB",
+      type: "Technical Club",
+      role: "Volunteer & Poster Designer",
+      description: "Supporting community events, technical workshops, and designing visual materials for the Siddaganga Institute of Technology IEEE Student Branch.",
+      icon: "users",
+      instagram: "https://www.instagram.com/ieeesitsb?igsh=eDN3Nmd1MWJuZGZq",
+      logo: "/ieee_logo.jpg"
+    },
+    {
+      name: "BROWSE",
+      type: "CSE Department Fest",
+      role: "Social Media Manager",
+      description: "Managing the official department fest Instagram page, creating promotional campaigns, designing content, and building online engagement for the CSE branch fest.",
+      icon: "instagram",
+      instagram: "https://www.instagram.com/browse_sit.official?igsh=MmwzcWhrdjF3eXd5",
+      logo: "/cse_fest_logo.jpg"
     }
   ],
   interests: [

@@ -39,10 +39,12 @@ export function AIChat() {
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
         contents: [
-          { role: 'user', parts: [{ text: `Answer the following question about Satya Prakash based on this CV data: ${JSON.stringify(CV_DATA)}. Be professional, friendly, and concise. Question: ${input}` }] }
+          { role: 'user', parts: [{ text: `Answer this question about Satya Prakash using ONLY the provided CV Data. Keep it extremely brief and direct.
+CV Data: ${JSON.stringify(CV_DATA)}
+Question: ${input}` }] }
         ],
         config: {
-          systemInstruction: "You are SP's Assistant, an AI built for Satya Prakash, a CSE AI & ML student. Your goal is to provide information about his background, projects (SP's Assistant, Money Manager Pro, Nanocomposite Green Synthesis, Personal Portfolio Website), skills (Python, Java, Vibe Coding, ML), and education based on the provided CV data.",
+          systemInstruction: "You are SP's Assistant, a highly specific AI helper for Satya Prakash (SP). Rules:\n1. Answer ONLY using the facts present in the CV Data.\n2. If the answer cannot be found in the CV Data, say: 'I don't have that information. Please check the portfolio sections or contact Satya directly.'\n3. Keep responses extremely concise (1-3 sentences maximum). Avoid unnecessary details, filler, or lengthy introductions.\n4. Never guess, assume, or hallucinate facts.",
         }
       });
 
