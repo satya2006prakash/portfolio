@@ -118,7 +118,7 @@ export const CV_DATA = {
       logo: "/aurora_logo.jpg"
     },
     {
-      name: "Adlib",
+      name: "AdLib Arts",
       type: "Photography Club",
       role: "Photographer & Videographer",
       description: "Capturing institutional events, producing creative video content, and managing media production for the campus photography club.",
