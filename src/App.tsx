@@ -163,9 +163,7 @@ export default function App() {
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2 lg:gap-6">
             <div className="flex items-center gap-2 group cursor-pointer" onClick={() => scrollTo('about')}>
-              <div className="w-8 h-8 bg-gold rounded flex items-center justify-center text-navy font-display font-black text-xs transition-all group-hover:bg-white group-hover:scale-110">
-                SP
-              </div>
+              <SiteLogo className="w-8 h-8" textClassName="text-xs" />
               <span className="text-white font-display font-bold tracking-widest text-sm hidden sm:block">SATYA PRAKASH</span>
             </div>
             
@@ -655,10 +653,8 @@ export default function App() {
       <footer className="bg-navy-dark text-white/40 py-12 px-6 border-t border-gold/10">
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
           <div className="flex flex-col items-center md:items-start gap-4 text-center md:text-left">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gold rounded flex items-center justify-center text-navy font-display font-black text-lg">
-                SP
-              </div>
+            <div className="flex items-center gap-3 group cursor-pointer" onClick={() => scrollTo('about')}>
+              <SiteLogo className="w-10 h-10" textClassName="text-lg" />
               <div>
                 <h2 className="font-display text-2xl text-white">Satya Prakash</h2>
                 <p className="text-[10px] tracking-widest uppercase text-gold font-semibold">Ready for Innovation</p>
@@ -742,6 +738,28 @@ function ProjectLogo({ logoUrl, fallbackIcon }: { logoUrl?: string, fallbackIcon
   return (
     <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-navy to-navy-dark flex items-center justify-center text-gold border-2 border-gold/40 shadow-md shrink-0">
       {fallbackIcon}
+    </div>
+  );
+}
+
+function SiteLogo({ className = "w-8 h-8", textClassName = "text-xs" }: { className?: string, textClassName?: string }) {
+  const [imageError, setImageError] = useState(false);
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  return (
+    <div className={`${className} bg-gold rounded overflow-hidden flex items-center justify-center text-navy font-display font-black transition-all group-hover:bg-white group-hover:scale-110 relative shrink-0 shadow-inner`}>
+      {!imageError ? (
+        <img 
+          src="/site_logo.png" 
+          alt="Satya Prakash Logo" 
+          className={`w-full h-full object-cover transition-opacity duration-300 ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+          onLoad={() => setImageLoaded(true)}
+          onError={() => setImageError(true)}
+        />
+      ) : null}
+      {(!imageLoaded || imageError) && (
+        <span className={`absolute inset-0 flex items-center justify-center ${textClassName}`}>SP</span>
+      )}
     </div>
   );
 }
