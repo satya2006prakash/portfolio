@@ -597,7 +597,6 @@ export default function App() {
                   <div>
                     <div className="flex justify-between items-start mb-6">
                       <span className="font-display text-4xl font-black text-gold/70">{proj.id}</span>
-                      <ArrowUpRight className="text-gold opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
                     <h3 className="font-display text-2xl font-bold text-navy mb-2 leading-tight">{proj.name}</h3>
                     <div className="flex flex-wrap gap-2 mb-4">
@@ -620,7 +619,7 @@ export default function App() {
                         rel="noopener noreferrer" 
                         className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-widest uppercase text-navy border-b-2 border-gold pb-1 hover:text-gold transition-colors"
                       >
-                        View Project <ChevronRight size={14} />
+                        View Project
                       </a>
                     )}
                     {proj.links && proj.links.map((subLink, idx) => (
@@ -631,7 +630,7 @@ export default function App() {
                         rel="noopener noreferrer" 
                         className="inline-flex items-center gap-1.5 text-[11px] font-bold tracking-widest uppercase text-navy border-b-2 border-gold pb-1 hover:text-gold transition-colors"
                       >
-                        {subLink.label} <ChevronRight size={14} />
+                        {subLink.label}
                       </a>
                     ))}
                     {!proj.link && (!proj.links || proj.links.length === 0) && (
