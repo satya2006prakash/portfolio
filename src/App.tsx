@@ -347,9 +347,16 @@ export default function App() {
                       {club.name}
                     </h3>
                     
-                    <p className="text-navy font-semibold text-xs mb-4 italic tracking-wide">
+                    <p className="text-navy font-semibold text-xs italic tracking-wide">
                       {club.role}
                     </p>
+
+                    {(club as any).period && (
+                      <p className="flex items-center gap-1.5 text-[10px] font-bold tracking-widest uppercase text-gold mt-1 mb-4">
+                        <Calendar size={11} />
+                        {(club as any).period}
+                      </p>
+                    )}
 
                     <p className="text-navy/70 text-sm leading-relaxed mb-6">
                       {club.description}
@@ -597,6 +604,11 @@ export default function App() {
                   <div>
                     <div className="flex justify-between items-start mb-6">
                       <span className="font-display text-4xl font-black text-gold/70">{proj.id}</span>
+                      {(proj as any).year && (
+                        <span className="flex items-center gap-1 text-[10px] font-black tracking-widest uppercase bg-navy text-gold px-2.5 py-1 rounded">
+                          <Calendar size={10} /> {(proj as any).year}
+                        </span>
+                      )}
                     </div>
                     <h3 className="font-display text-2xl font-bold text-navy mb-2 leading-tight">{proj.name}</h3>
                     <div className="flex flex-wrap gap-2 mb-4">

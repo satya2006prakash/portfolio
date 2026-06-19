@@ -73,6 +73,7 @@ export const CV_DATA = {
     {
       id: "01",
       name: "EduTrack SIT",
+      year: "2026",
       tech: ["HTML", "CSS", "JavaScript", "Supabase", "Vercel", "GitHub"],
       description: "A smart academic tracking platform designed specifically for SIT Tumkur students to calculate attendance, monitor CIE marks, predict SEE targets, and estimate SGPA. Connected to a live Supabase database with authentication, serving 1300+ backend requests within 6 hours of launch.",
       link: "https://edu-track-sit.vercel.app/"
@@ -80,6 +81,7 @@ export const CV_DATA = {
     {
       id: "02",
       name: "College FAQ ChatBot",
+      year: "2025",
       tech: ["HTML", "CSS", "JavaScript", "NLP"],
       description: "An Innovation and Design Thinking Laboratory project at Siddaganga Institute of Technology (SIT). Developed a web-based interactive chatbot providing instant, accurate, and user-friendly access to institutional information about admissions, courses, and campus life using keyword-based matching and dynamic responses. Features an integrated feedback system and admin panel.",
       links: [
@@ -90,18 +92,21 @@ export const CV_DATA = {
     {
       id: "03",
       name: "Money Manager Pro",
+      year: "2026",
       tech: ["HTML", "CSS", "JavaScript", "Google Sheets API"],
       description: "Built a real-time expense and income tracker with live Google Sheets synchronization. Features include categorical budgeting and financial visualization for seamless money management."
     },
     {
       id: "04",
       name: "Nanocomposite Green Synthesis",
+      year: "2026",
       tech: ["Nanotechnology", "Materials Science", "XRD Analysis", "PLA"],
       description: "An interdisciplinary research project at Siddaganga Institute of Technology (SIT) focused on the green synthesis of TiO2 nanoparticles and the development of sustainable PLA-TiO2 nanocomposites for electrical insulator applications. Conducted under the guidance of Dr. Rashmi, Head of Department, Electronics and Electrical Engineering."
     },
     {
       id: "05",
       name: "Personal Portfolio Website",
+      year: "2026",
       tech: ["React", "Vite", "Tailwind CSS", "Vibe Coding"],
       description: "Created a personal portfolio website using 'Vibe Coding' to showcase my academic journey and technical skills. The site features interactive components, responsive design, and smooth animations using modern web technologies.",
       link: "https://sp-tech-hub.vercel.app/"
@@ -111,6 +116,7 @@ export const CV_DATA = {
     {
       name: "Aurora",
       type: "The Theatrical Club",
+      period: "2025 - Present",
       role: "Editor & Poster Designer",
       description: "Designing promotional posters and editing publications for the college's drama and theatrical club, promoting theatrical plays, cultural events, and stage productions.",
       icon: "book",
@@ -120,6 +126,7 @@ export const CV_DATA = {
     {
       name: "AdLib Arts",
       type: "Photography Club",
+      period: "2025 - Present",
       role: "Photographer & Videographer",
       description: "Capturing institutional events, producing creative video content, and managing media production for the campus photography club.",
       icon: "camera",
@@ -129,6 +136,7 @@ export const CV_DATA = {
     {
       name: "IEEE SB",
       type: "Technical Club",
+      period: "2026 - Present",
       role: "Volunteer & Poster Designer",
       description: "Supporting community events, technical workshops, and designing visual materials for the Siddaganga Institute of Technology IEEE Student Branch.",
       icon: "users",
@@ -138,6 +146,7 @@ export const CV_DATA = {
     {
       name: "BROWSE",
       type: "CSE Department Fest",
+      period: "2026 - Present",
       role: "Social Media Manager",
       description: "Managing the official department fest Instagram page, creating promotional campaigns, designing content, and building online engagement for the CSE branch fest.",
       icon: "instagram",
