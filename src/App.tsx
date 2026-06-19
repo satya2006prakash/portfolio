@@ -130,7 +130,7 @@ export default function App() {
             >
               <ContactItem icon={<Phone size={14} />} text="+91 7061800527" href="tel:+91 7061800527" />
               <ContactItem icon={<Mail size={14} />} text="satya2006prakash@gmail.com" href="mailto:satya2006prakash@gmail.com" />
-              <ContactItem icon={<MapPin size={14} />} text="Tumkur, Karnataka, India" />
+              <ContactItem icon={<MapPin size={14} />} text="Tumkur, Karnataka, India" href="https://www.google.com/maps/search/Tumkur,+Karnataka,+India" />
               <div className="flex gap-4 mt-2">
                 <a href="https://www.linkedin.com/in/satya-prakash-2b837a366?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" className="p-2 border border-gold/30 rounded-full hover:bg-gold/10 transition-colors text-gold">
                   <Linkedin size={18} />
@@ -246,10 +246,10 @@ export default function App() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
             <InfoCard label="Full Name" value="Satya Prakash" />
             <InfoCard label="Date of Birth" value="17 July 2006" />
-            <InfoCard label="Gender" value="Male" />
+            <InfoCard label="Languages" value="English, Hindi, Basic Kannada" />
+            <InfoCard label="Status" value="Open to Opportunities & Learning" />
+            <InfoCard label="Permanent Address" value="Koderma, Jharkhand, India" href="https://www.google.com/maps/search/Koderma,+Jharkhand,+India" />
             <InfoCard label="Nationality" value="Indian" />
-            <InfoCard label="Languages" value="English, Hindi, Balake Kannada" />
-            <InfoCard label="Status" value="Open to Opportunities" />
           </div>
         </Section>
 
@@ -774,7 +774,12 @@ function ContactItem({ icon, text, href }: { icon: React.ReactNode, text: string
   );
 
   return href ? (
-    <a href={href} className="flex items-center gap-3 hover:text-gold active:scale-95 transition-all group w-fit">
+    <a
+      href={href}
+      target={href.startsWith('http') ? '_blank' : '_self'}
+      rel="noopener noreferrer"
+      className="flex items-center gap-3 hover:text-gold active:scale-95 transition-all group w-fit"
+    >
       {content}
     </a>
   ) : (
@@ -799,7 +804,7 @@ function Section({ id, title, label, children }: { id: string, title: string, la
   );
 }
 
-function InfoCard({ label, value }: { label: string, value: string }) {
+function InfoCard({ label, value, href }: { label: string, value: string, href?: string }) {
   return (
     <motion.div 
       initial={{ opacity: 0, scale: 0.95 }}
@@ -808,7 +813,18 @@ function InfoCard({ label, value }: { label: string, value: string }) {
       className="bg-white p-6 border border-gold/10 rounded-sm hover:border-gold/40 transition-colors shadow-sm"
     >
       <p className="text-[9px] font-bold tracking-[0.2em] uppercase text-gold mb-1">{label}</p>
-      <p className="text-navy font-semibold">{value}</p>
+      {href ? (
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-navy font-semibold hover:text-gold transition-colors no-underline flex items-center gap-1 w-fit"
+        >
+          {value} <MapPin size={12} className="shrink-0 text-gold" />
+        </a>
+      ) : (
+        <p className="text-navy font-semibold">{value}</p>
+      )}
     </motion.div>
   );
 }
