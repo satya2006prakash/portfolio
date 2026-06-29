@@ -103,8 +103,8 @@ export const CV_DATA = {
       tech: ["Nanotechnology", "Materials Science", "XRD Analysis", "PLA"],
       description: "An interdisciplinary research project at Siddaganga Institute of Technology (SIT) focused on the green synthesis of TiO2 nanoparticles and the development of sustainable PLA-TiO2 nanocomposites for electrical insulator applications. Conducted under the guidance of Dr. Rashmi, Head of Department, Electronics and Electrical Engineering.",
       links: [
-        { label: "View Report", url: "/IDP report of Green Synthesis of TiO2.pdf" },
-        { label: "View PPT", url: "/IDP PPT of Green Synthesis of TiO2.pdf" }
+        { label: "View Report", url: "/IDP_report_of_Green_Synthesis_of_TiO2.pdf" },
+        { label: "View PPT", url: "/IDP_PPT_of_Green_Synthesis_of_TiO2.pdf" }
       ]
     },
     {
