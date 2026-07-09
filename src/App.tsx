@@ -236,7 +236,7 @@ export default function App() {
           >
             <div className="absolute top-4 left-6 text-7xl font-display text-gold-pale opacity-30 select-none">"</div>
             <p className="font-display text-xl md:text-2xl italic text-navy-mid leading-relaxed relative z-10">
-              I am a first-year Computer Science and Engineering student with a specialization in Artificial Intelligence and Machine Learning (AI & ML). I have a strong interest in Artificial Intelligence, Machine Learning, and Software Development, and I am passionate about learning how intelligent systems work and how technology can be used to solve real-world problems. My areas of interest include Python programming, Java, and C programming. I am actively building my technical skills through academic projects, coding practice, and online learning platforms. I enjoy participating in hackathons, technical events, and collaborative activities that help me enhance my problem-solving, teamwork, leadership, and communication skills. I am eager to explore emerging technologies and continuously expand my knowledge to develop innovative and impactful solutions in the field of AI and Machine Learning.
+              I am a second-year (3rd Semester) Computer Science and Engineering student with a specialization in Artificial Intelligence and Machine Learning (AI & ML). I have a strong interest in Artificial Intelligence, Machine Learning, and Software Development, and I am passionate about learning how intelligent systems work and how technology can be used to solve real-world problems. My areas of interest include Python programming, Java, and C programming. I am actively building my technical skills through academic projects, coding practice, and online learning platforms. I enjoy participating in hackathons, technical events, and collaborative activities that help me enhance my problem-solving, teamwork, leadership, and communication skills. I am eager to explore emerging technologies and continuously expand my knowledge to develop innovative and impactful solutions in the field of AI and Machine Learning.
             </p>
           </motion.div>
         </Section>
@@ -268,7 +268,7 @@ export default function App() {
                 <a href="https://sit.ac.in/" target="_blank" rel="noopener noreferrer" className="hover:underline flex items-center gap-1 group/edu">
                   Siddaganga Institute of Technology, Tumkur, Karnataka <ExternalLink size={12} className="opacity-50 group-hover/edu:opacity-100 transition-opacity" />
                 </a> 
-                <span className="text-navy/40 px-1">|</span> <span className="text-navy">CGPA: 7.9 / 10</span>
+                <span className="text-navy/40 px-1">|</span> <span className="text-navy">CGPA: 8.35 / 10</span>
               </p>
               <p className="text-navy/70 text-sm leading-relaxed">
                 Focusing on Artificial Intelligence, Machine Learning, and core Software Engineering principles. Actively building technical skills through academic coding, algorithm design, and exploring emerging intelligent technologies.

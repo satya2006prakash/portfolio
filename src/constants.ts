@@ -24,7 +24,7 @@ export const CV_DATA = {
     instagram: "https://www.instagram.com/niku_modi.official?igsh=MmdrY2Q4eGN1MnV4",
     x: "https://x.com/niku_modi_2006"
   },
-  about: "I am a first-year Computer Science and Engineering student with a specialization in Artificial Intelligence and Machine Learning (AI & ML). I have a strong interest in Artificial Intelligence, Machine Learning, and Software Development, and I am passionate about learning how intelligent systems work and how technology can be used to solve real-world problems. My areas of interest include Python programming, Java, and C programming. I am actively building my technical skills through academic projects, coding practice, and online learning platforms. I enjoy participating in hackathons, technical events, and collaborative activities that help me enhance my problem-solving, teamwork, leadership, and communication skills. I am eager to explore emerging technologies and continuously expand my knowledge to develop innovative and impactful solutions in the field of AI and Machine Learning.",
+  about: "I am a second-year (3rd Semester) Computer Science and Engineering student with a specialization in Artificial Intelligence and Machine Learning (AI & ML). I have a strong interest in Artificial Intelligence, Machine Learning, and Software Development, and I am passionate about learning how intelligent systems work and how technology can be used to solve real-world problems. My areas of interest include Python programming, Java, and C programming. I am actively building my technical skills through academic projects, coding practice, and online learning platforms. I enjoy participating in hackathons, technical events, and collaborative activities that help me enhance my problem-solving, teamwork, leadership, and communication skills. I am eager to explore emerging technologies and continuously expand my knowledge to develop innovative and impactful solutions in the field of AI and Machine Learning.",
   personalInfo: {
     dob: "17 July 2006",
     gender: "Male",
@@ -38,7 +38,7 @@ export const CV_DATA = {
       degree: "Bachelor Of Engineering — C.S.E (AI & ML)",
       period: "2025 – 2029",
       institution: "Siddaganga Institute of Technology, Tumkur, Karnataka",
-      score: "CGPA: 7.9 / 10",
+      score: "CGPA: 8.35 / 10",
       link: "https://sit.ac.in/",
       description: "Focusing on Artificial Intelligence, Machine Learning, and core Software Engineering principles. Actively building technical skills through academic coding, algorithm design, and exploring emerging intelligent technologies."
     },
