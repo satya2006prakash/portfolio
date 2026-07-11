@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Phone, Mail, MapPin, Linkedin, Github, Instagram, Twitter,
-  ChevronRight, Calendar, GraduationCap, 
+  ChevronRight, Calendar, GraduationCap, User,
   Briefcase, Cpu, Award, Heart, MessageSquare,
   Menu, X, ExternalLink, ArrowUpRight,
   Code, Brain, Terminal, Layers, Sparkles, GitBranch, Puzzle,
@@ -19,7 +19,6 @@ import { CV_DATA } from './constants';
 export default function App() {
   const [activeTab, setActiveTab] = useState('about');
   const [isScrolled, setIsScrolled] = useState(false);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,34 +40,29 @@ export default function App() {
   }, []);
 
   const scrollTo = (id: string) => {
-    setMobileMenuOpen(false);
-    
-    // Tiny timeout to let the mobile menu close animation start and layout adjust
-    setTimeout(() => {
-      const element = document.getElementById(id);
-      if (element) {
-        const offset = 80;
-        const elementPosition = element.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - offset;
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.scrollY - offset;
 
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
-        });
-      }
-    }, 150);
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
   };
 
   const navItems = [
-    { id: 'about', label: 'About' },
-    { id: 'personal', label: 'Personal' },
-    { id: 'education', label: 'Education' },
-    { id: 'clubs', label: 'Clubs' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'interests', label: 'Interests' },
-    { id: 'resume', label: 'Resume' },
-    { id: 'edutrack', label: 'EduTrack SIT' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'about', label: 'About', icon: User },
+    { id: 'personal', label: 'Personal', icon: Heart },
+    { id: 'education', label: 'Education', icon: GraduationCap },
+    { id: 'clubs', label: 'Clubs', icon: Users },
+    { id: 'skills', label: 'Skills', icon: Cpu },
+    { id: 'interests', label: 'Interests', icon: Palette },
+    { id: 'resume', label: 'Resume', icon: FileText },
+    { id: 'edutrack', label: 'EduTrack SIT', icon: Zap },
+    { id: 'projects', label: 'Projects', icon: Code },
   ];
 
   return (
@@ -161,34 +155,10 @@ export default function App() {
       {/* --- NAVIGATION --- */}
       <nav className={`sticky top-0 z-40 transition-all duration-300 ${isScrolled ? 'bg-navy shadow-xl translate-y-0' : 'bg-navy-dark'}`}>
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          <div className="flex items-center gap-2 lg:gap-6">
-            <div className="flex items-center gap-2 group cursor-pointer" onClick={() => scrollTo('about')}>
-              <SiteLogo className="w-8 h-8" textClassName="text-xs" />
-              <span className="text-white font-display font-bold tracking-widest text-sm hidden sm:block">SATYA PRAKASH</span>
-            </div>
-            
-            <div className="hidden lg:flex gap-1 xl:gap-2">
-              {navItems.map((item) => (
-                <button 
-                  key={item.id}
-                  onClick={() => scrollTo(item.id)} 
-                  className={`px-2 xl:px-3 py-2 text-[11px] font-semibold tracking-[0.11em] xl:tracking-[0.14em] uppercase transition-all relative whitespace-nowrap ${activeTab === item.id ? 'text-gold' : 'text-white/50 hover:text-gold-light'}`}
-                >
-                  {item.label}
-                  {activeTab === item.id && (
-                    <motion.div layoutId="nav-pill" className="absolute bottom-0 left-2 right-2 h-0.5 bg-gold" />
-                  )}
-                </button>
-              ))}
-            </div>
+          <div className="flex items-center gap-2 group cursor-pointer" onClick={() => scrollTo('about')}>
+            <SiteLogo className="w-8 h-8" textClassName="text-xs" />
+            <span className="text-white font-display font-bold tracking-widest text-sm hidden sm:block">SATYA PRAKASH</span>
           </div>
-
-          <button 
-            className="lg:hidden text-gold p-2"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
 
           <div className="flex items-center gap-4 shrink-0">
              <a 
@@ -199,28 +169,6 @@ export default function App() {
              </a>
           </div>
         </div>
-
-        {/* Mobile Nav */}
-        <AnimatePresence>
-          {mobileMenuOpen && (
-            <motion.div 
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: 'auto' }}
-              exit={{ opacity: 0, height: 0 }}
-              className="lg:hidden bg-navy-dark border-t border-white/10"
-            >
-              {navItems.map((item) => (
-                <button 
-                  key={item.id}
-                  onClick={() => scrollTo(item.id)} 
-                  className="w-full text-left px-8 py-4 text-sm font-semibold tracking-widest uppercase text-white/70 border-b border-white/5 hover:bg-gold/10"
-                >
-                  {item.label}
-                </button>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
       </nav>
 
       {/* --- CONTENT --- */}
@@ -689,6 +637,51 @@ export default function App() {
 
       {/* --- AI ASSISTANT --- */}
       <AIChat />
+
+      {/* --- FLOATING DOCK MENU --- */}
+      <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 max-w-[95vw] sm:max-w-none">
+        <motion.div 
+          initial={{ y: 80, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ delay: 0.5, type: 'spring', stiffness: 120, damping: 14 }}
+          className="flex items-center gap-1 sm:gap-2.5 bg-navy-dark/90 backdrop-blur-xl px-2.5 py-1.5 sm:px-4 sm:py-3 border border-gold/20 rounded-full shadow-[0_15px_40px_rgba(11,28,58,0.5)]"
+        >
+          {navItems.map((item) => {
+            const Icon = item.icon;
+            const isActive = activeTab === item.id;
+            
+            return (
+              <button
+                key={item.id}
+                onClick={() => scrollTo(item.id)}
+                className="group relative p-1 sm:p-1.5 rounded-full transition-all duration-300"
+              >
+                {/* Tooltip */}
+                <span className="absolute bottom-full mb-3 left-1/2 -translate-x-1/2 bg-navy-dark border border-gold/30 text-gold text-[9px] tracking-widest uppercase font-bold px-2.5 py-1 rounded shadow-2xl pointer-events-none opacity-0 group-hover:opacity-100 transition-all duration-200 transform translate-y-2 group-hover:translate-y-0 whitespace-nowrap z-50">
+                  {item.label}
+                </span>
+                
+                {/* Icon Container with Magnification Effect */}
+                <motion.div
+                  whileHover={{ scale: 1.25, y: -6 }}
+                  whileTap={{ scale: 0.95 }}
+                  className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 ${isActive ? 'bg-gold text-navy-dark shadow-[0_0_15px_rgba(201,168,76,0.4)]' : 'bg-navy/30 text-white/60 hover:bg-navy/80 hover:text-gold'}`}
+                >
+                  <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                </motion.div>
+
+                {/* Active Indicator Dot */}
+                {isActive && (
+                  <motion.div 
+                    layoutId="active-dot" 
+                    className="absolute -bottom-1.5 left-1/2 -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-gold shadow-[0_0_8px_rgba(201,168,76,1)]" 
+                  />
+                )}
+              </button>
+            );
+          })}
+        </motion.div>
+      </div>
     </div>
   );
 }
