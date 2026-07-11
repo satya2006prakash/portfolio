@@ -232,10 +232,10 @@ export default function App() {
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="relative bg-white p-5 sm:p-8 md:p-12 border border-gold/20 border-l-4 border-l-gold shadow-sm"
+            className="relative bg-white py-6 px-8 sm:py-8 sm:px-10 md:py-12 md:px-16 border border-gold/20 border-l-4 border-l-gold shadow-sm"
           >
-            <div className="absolute top-4 left-6 text-7xl font-display text-gold-pale opacity-30 select-none">"</div>
-            <p className="font-display text-xl md:text-2xl italic text-navy-mid leading-relaxed relative z-10">
+            <div className="absolute top-2 left-2 md:top-4 md:left-6 text-7xl md:text-8xl font-display text-gold-pale opacity-40 select-none">"</div>
+            <p className="font-display text-xl md:text-2xl italic text-navy-mid leading-relaxed relative z-10 text-justify">
               I am a second-year (3rd Semester) Computer Science and Engineering student with a specialization in Artificial Intelligence and Machine Learning (AI & ML). I have a strong interest in Artificial Intelligence, Machine Learning, and Software Development, and I am passionate about learning how intelligent systems work and how technology can be used to solve real-world problems. My areas of interest include Python programming, Java, and C programming. I am actively building my technical skills through academic projects, coding practice, and online learning platforms. I enjoy participating in hackathons, technical events, and collaborative activities that help me enhance my problem-solving, teamwork, leadership, and communication skills. I am eager to explore emerging technologies and continuously expand my knowledge to develop innovative and impactful solutions in the field of AI and Machine Learning.
             </p>
           </motion.div>
